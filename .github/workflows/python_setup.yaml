@@ -1,0 +1,24 @@
+on: [push]
+
+jobs:
+  python-job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup Pythonafzaal
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Install Dependenciesafzaal
+        run: pip install pytest flake8
+
+      - name: Check Python Versionafzaal
+        run: python --version
+
+      - name: Flake8 Lintingafzaal
+        run: flake8 --version
+
+      - name: Pytest Checkafzaal
+        run: pytest --version
